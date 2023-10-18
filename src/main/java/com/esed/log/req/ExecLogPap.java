@@ -3,18 +3,18 @@ package com.esed.log.req;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import org.apache.log4j.Logger;
-
 import com.esed.log.req.config.ConfigLogRequest;
 import com.esed.log.req.dati.CollectionDto;
 import com.esed.log.req.dati.LogPap;
+import com.seda.commons.logger.CustomLoggerManager;
+import com.seda.commons.logger.LoggerWrapper;
 import com.seda.data.spi.PageInfo;
 import com.seda.payer.core.dao.LogPapDao;
 import com.seda.payer.core.exception.DaoException;
 
 public class ExecLogPap {
 	
-	private static Logger logger = Logger.getLogger(ExecLogPap.class);	
+	private static final LoggerWrapper logger =  CustomLoggerManager.get(ExecLogPap.class);	
 	public static Integer saveRequest(LogPap in) throws LogRequestException {
 
 		if(in == null) {

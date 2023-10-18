@@ -1,7 +1,9 @@
 package com.esed.log.req.config;
 
 import java.sql.Connection;
-import org.apache.log4j.Logger;
+
+import com.seda.commons.logger.CustomLoggerManager;
+import com.seda.commons.logger.LoggerWrapper;
 import com.seda.commons.properties.tree.PropertiesNodeException;
 import com.seda.commons.properties.tree.PropertiesTree;
 import com.seda.compatibility.SystemVariable;
@@ -11,7 +13,7 @@ import com.seda.j2ee5.jndi.JndiProxyException;
 
 public class ConfigLogRequest {
 	
-	private static final Logger logger = Logger.getLogger(ConfigLogRequest.class);
+	private static final LoggerWrapper logger =  CustomLoggerManager.get(ConfigLogRequest.class);
 
 	public static PropertiesTree configuration = null;
 	public static String sRootPath = "LOGREQUEST_WSROOT";
