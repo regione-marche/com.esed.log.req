@@ -3,17 +3,17 @@ package com.esed.log.req;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import org.apache.log4j.Logger;
-
 import com.esed.log.req.config.ConfigLogRequest;
 import com.esed.log.req.dati.CollectionDto;
 import com.esed.log.req.dati.LogRequest;
+import com.seda.commons.logger.CustomLoggerManager;
+import com.seda.commons.logger.LoggerWrapper;
 import com.seda.payer.core.dao.LogRequestDao;
 import com.seda.payer.core.exception.DaoException;
 
 public class ExecRequest {
 	
-	private static final Logger logger = Logger.getLogger(ExecRequest.class);
+	private static final LoggerWrapper logger =  CustomLoggerManager.get(ExecRequest.class);
 	
 	public static Integer saveRequest(LogRequest logRequest) throws LogRequestException {
 

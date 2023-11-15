@@ -3,17 +3,17 @@ package com.esed.log.req;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import org.apache.log4j.Logger;
-
 import com.esed.log.req.config.ConfigLogRequest;
 import com.esed.log.req.dati.CollectionDto;
 import com.esed.log.req.dati.LogWin;
+import com.seda.commons.logger.CustomLoggerManager;
+import com.seda.commons.logger.LoggerWrapper;
 import com.seda.payer.core.dao.LogWinDao;
 import com.seda.payer.core.exception.DaoException;
 
 public class ExecLogWin {
 	
-	private static Logger logger = Logger.getLogger(ExecLogWin.class);	
+	private static final LoggerWrapper logger =  CustomLoggerManager.get(ExecLogWin.class);	
 	public static Integer saveRequest(LogWin in) throws LogRequestException {
 
 		if(in == null) {
